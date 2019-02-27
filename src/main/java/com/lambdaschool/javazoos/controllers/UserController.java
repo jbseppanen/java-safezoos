@@ -1,7 +1,7 @@
 package com.lambdaschool.javazoos.controllers;
 
-import com.lambdaschool.ourcourses.model.User;
-import com.lambdaschool.ourcourses.service.UserService;
+import com.lambdaschool.javazoos.models.User;
+import com.lambdaschool.javazoos.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
