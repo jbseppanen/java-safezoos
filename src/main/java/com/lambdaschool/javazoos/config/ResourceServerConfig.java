@@ -20,15 +20,15 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
     }
 
     @Override
-    public void configure(HttpSecurity http) throws Exception
-    {
+    public void configure(HttpSecurity http) throws Exception {
         http.
                 anonymous().disable()
                 .authorizeRequests()
-                .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
-                .antMatchers("/users/**").access("hasRole('ROLE_ADMIN')")
-                .antMatchers("/animals/**").access("hasRole('ROLE_USER')")
-                .antMatchers("/zoos/**").access("hasRole('ROLE_USER')")
+                .antMatchers("/admin/**").access("hasAnyRole('ROLE_ADMIN')")
+                .antMatchers("/users/**").access("hasAnyRole('ROLE_ADMIN')")
+                .antMatchers("/zoos/**").access("hasAnyRole('ROLE_ZOO', 'ROLE_USER')")
+                .antMatchers("/animals/**").access("hasAnyRole('ROLE_ANIMAL', 'ROLE_USER')")
+                .antMatchers("/actuator/**").access("hasAnyRole('ROLE_MGR')")
                 .and().exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
     }
 }

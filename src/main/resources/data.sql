@@ -31,3 +31,10 @@ INSERT INTO zooanimals (zooid, animalid)
                 (5, 1),
                 (3, 1),
                 (3, 2);
+
+INSERT INTO zoos.user (`id`, `password`, `role`, `username`)
+    VALUES  ('1', 'ILuvM4th!', 'admin', 'lucy'),
+            ('2', 'zookeeper', 'zoo', 'linus'),
+            ('3', 'vet', 'animal', 'marcie'),
+            ('4', 'tech', 'mgr', 'pigpen'),
+            ('5', 'password', 'user', 'sally');
